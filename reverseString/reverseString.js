@@ -1,3 +1,13 @@
+// Reversing a string using recursion
+const recur = function(str) {
+
+    if(str === "") {
+       return "";
+    }
+
+    return recur(str.substr(1)) + str[0];
+}
+
 const reverseString = function(str) {
     let revStr = "";
 
@@ -5,7 +15,7 @@ const reverseString = function(str) {
         revStr += str[i];
     }
 
-    return revStr;
+    return recur(str);
 }
 
 module.exports = reverseString
